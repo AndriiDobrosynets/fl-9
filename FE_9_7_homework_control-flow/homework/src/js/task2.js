@@ -17,7 +17,6 @@ if (confirm('Do you want to play a game?')) {
     let attempts = 2;
     let randomNumber = Math.round(Math.random() * rangeTo);
     let doWin = false;
-    console.log(`Random ${randomNumber}`);
 
     for (attempts; attempts >= 0; attempts--) {
       let usersNumber = prompt(`
