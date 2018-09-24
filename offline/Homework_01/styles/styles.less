@@ -1,0 +1,59 @@
+@import "./variables";
+
+.header {
+  border-bottom: 1px solid @light-grey;
+}
+
+.navbar-nav {
+  .nav-link {
+    font-weight: 600;
+    padding: 15px;
+    transition: all 0.3s;
+    &:hover {
+      background: @blue;
+      color: #fff !important;
+    }
+  }
+}
+.class-card {
+  padding: 1px;
+  &.red {
+    background: @red;
+  }
+  &.blue {
+    background: @blue;
+  }
+  &.orange {
+    background: @orange;
+  }
+  &.green {
+    background: @green;
+  }
+  &-title {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+.footer {
+  background: @grey;
+  color: #fff;
+  padding: 15px 20px;
+  font-weight: 600;
+  &-body {
+    margin: 0;
+  }
+}
+
+.heading {
+  color: @blue;
+  padding: 10px 0;
+  &.with-border {
+    border-bottom: 1px solid @blue;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
+}
