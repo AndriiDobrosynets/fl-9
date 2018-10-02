@@ -14,25 +14,17 @@ function ShoppingCart(name, owner, maxCount) {
   let _logs = [`${this.name} was created at ${getDate()}`];
   this.addNewProduct = function(product) {
     if (product instanceof Product) {
-      if (_products.length < this.maxCount) {
-        product.dateOdAddingToCart = getDate();
-        _products.push(product);
-        product.add(this);
-        _logs.push(
-          `${product.name} was adeed to ${this.name} in ${
-            product.dateOdAddingToCart
-          }`
-        );
-      } else {
+      if (_products.length >= this.maxCount) {
         this.removeCheapestProduct();
-        _products.push(product);
-        product.add(this);
-        _logs.push(
-          `${product.name} was adeed to ${this.name} in ${
-            product.dateOdAddingToCart
-          }`
-        );
       }
+      product.dateOdAddingToCart = getDate();
+      _products.push(product);
+      product.add(this);
+      _logs.push(
+        `${product.name} was adeed to ${this.name} in ${
+          product.dateOdAddingToCart
+        }`
+      );
     } else {
       console.log('Please try to add Product instance');
     }
@@ -132,7 +124,6 @@ function Product(name, description, price) {
     return _logs;
   };
 }
-
 
 const apple = new Product(
   'apple',
