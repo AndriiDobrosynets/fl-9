@@ -1,5 +1,5 @@
 const http = {
-  get: function (url) {
+  get: function(url) {
     return new Promise((succeed, fail) => {
       const request = new XMLHttpRequest();
       request.open('GET', url, true);
@@ -9,7 +9,7 @@ const http = {
         }
         fail(new Error(this.statusText));
       };
-      request.onerror = function () {
+      request.onerror = function() {
         fail(new Error('Network Error'));
       };
       request.send();
@@ -21,24 +21,38 @@ const btn = document.getElementById('btn');
 const ouput = document.querySelector('.ouput');
 const loader = document.querySelector('.loader-wrap');
 
-
-
 btn.addEventListener('click', () => {
   const lat = document.getElementById('lat').value;
   const lon = document.getElementById('lon').value;
   loader.classList.remove('invisible');
-  http.get(`https://api.onwater.io/api/v1/results/${lat},${lon}`)
-    .then((data) => {
+  http
+    .get(`https://api.onwater.io/api/v1/results/${lat},${lon}`)
+    .then(data => {
       const response = JSON.parse(data.response);
       if (response.water) {
-        ouput.innerHTML = `
-        <h2>Water<h2>`;
+        const img = http.get('https://source.unsplash.com/1600x900/?sea');
+        img
+          .then(img => {
+            ouput.innerHTML = `
+          <img class='animate-img' src=${img.responseURL} alt='water'/>`;
+          }, null)
+          .catch(error => {
+            console.error(error);
+          });
       } else {
-        ouput.innerHTML = `
-        <h2>Land<h2>`;
+        const img = http.get('https://source.unsplash.com/1600x900/?land');
+        img
+          .then(img => {
+            ouput.innerHTML = `
+          <img class='animate-img' src=${img.responseURL} alt='water'/>`;
+          }, null)
+          .catch(error => {
+            console.error(error);
+          });
       }
       loader.classList.add('invisible');
-    }, null).catch((error) => {
+    }, null)
+    .catch(error => {
       ouput.innerText = error.message;
       loader.classList.add('invisible');
     });

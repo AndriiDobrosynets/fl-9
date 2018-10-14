@@ -24,7 +24,6 @@ img {
   display: none;
 }
 
-
 .form-control {
   padding: 10px;
   color: grey;
@@ -41,11 +40,18 @@ img {
   border: 2px solid grey;
   font-size: 20px;
   color: grey;
-
 }
 
-.form-control input[type="button"] {
+.btn {
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn:hover {
+  transform: translateY(-4px);
+}
+.btn:active {
+  transform: translateY(-2px);
 }
 
 .loader-wrap {
@@ -70,6 +76,10 @@ img {
   margin-left: -60px;
 }
 
+.animate-img {
+  animation: animateImg 1s 0.2s;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -77,5 +87,17 @@ img {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes animateImg {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
