@@ -1,31 +1,36 @@
 class Store {
-  constructor(pizzaSlicePrice, weekendDiscount, nightDiscount) {
+  constructor(pizzaSlicePrice) {
     this.pizzaSlicePrice = pizzaSlicePrice;
-    this.weekendDiscount = weekendDiscount;
-    this.nightDiscount = nightDiscount;
+    this.nightDiscount = 0;
+    this.weekendDiscount = 0;
     this.bonus = 0;
-    this.counterOfBuying = 0;
+    this.summaryPrice = 0;
   }
 
-  calulatePriceWithBonuce() {
-    let price;
-    if (this.bonus < this.getPizzaSlicePrice) {
-      price = this.getPizzaSlicePrice - this.bonus;
-      this.bonus = 0;
-    } else {
-      price = 0;
-      this.bonus = this.bonus - this.getPizzaSlicePrice;
-    }
-    return price;
+  calculatePrice() {
+    this.summaryPrice = this.pizzaSlicePrice - this.weekendDiscount - this.nightDiscount;
   }
+
   buyPizzaSlice() {
-    this.counterOfBuying++;
-    return `Price after discount is ${this.calulatePriceWithBonuce()} and you have ${
-      this.bonus
-    } bonuses`;
+    return `Price after discount is ${this.summaryPrice} and you have ${this.bonus} bonuses`;
   }
 }
 
-const store1 = new Store(20, 1, 1);
+function getDiscount(store) {
+  const date = new Date();
+  if (date.getHours() < 6) {
+    store.nightDiscount = 2;
+  }
+  if (date.getDay() > 5) {
+    store.weekendDiscount = 2;
+  }
+  store.calculatePrice();
+}
 
-console.log(store1.buyPizzaSlice());
+function setBonus(store) {
+  store.bonus += Math.floor(store.summaryPrice / 10);
+}
+
+const store1 = new Store(20);
+getDiscount(store1);
+setBonus(store1);
