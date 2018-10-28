@@ -21,7 +21,7 @@ function getDiscount(store) {
   if (date.getHours() < 6) {
     store.nightDiscount = 2;
   }
-  if (date.getDay() > 5) {
+  if (date.getDay() === 6 || date.getDay() === 0) {
     store.weekendDiscount = 2;
   }
   store.calculatePrice();
