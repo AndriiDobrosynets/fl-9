@@ -1,14 +1,16 @@
 class Store {
-  constructor(pizzaSlicePrice) {
+  constructor(pizzaSlicePrice, nightDiscount, weekendDiscount) {
     this.pizzaSlicePrice = pizzaSlicePrice;
-    this.nightDiscount = 0;
-    this.weekendDiscount = 0;
+    this.nightDiscount = nightDiscount;
+    this.weekendDiscount = weekendDiscount;
     this.bonus = 0;
     this.summaryPrice = 0;
   }
-
+  getDiscount() {
+    return 0;
+  }
   calculatePrice() {
-    this.summaryPrice = this.pizzaSlicePrice - this.weekendDiscount - this.nightDiscount;
+    this.summaryPrice = this.pizzaSlicePrice - this.getDiscount();
   }
 
   buyPizzaSlice() {
@@ -31,6 +33,7 @@ function setBonus(store) {
   store.bonus += Math.floor(store.summaryPrice / 10);
 }
 
-const store1 = new Store(20);
+const store1 = new Store(20, 1, 1);
 getDiscount(store1);
 setBonus(store1);
+console.log(store1.buyPizzaSlice())

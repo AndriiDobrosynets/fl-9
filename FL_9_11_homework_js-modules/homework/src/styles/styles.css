@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background:#bdbdbd;
+}
+.card {
+  width: 180px;
+  padding: 10px;
+  background: grey;
+}
+input[type='text'] {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.signs-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.button:not(:nth-child(3n)) {
+  margin-right: 5px;
+}
