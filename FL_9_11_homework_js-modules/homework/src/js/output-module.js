@@ -1,3 +1,4 @@
+import '../styles/styles.css';
 import { addition ,subtraction,multiplication,division } from './calculating-module';
 
 
