@@ -1,0 +1,109 @@
+// Common
+@import 'material-icons'; // self hosted material icons
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.wrapper {
+  display: flex;
+}
+.player-сard {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  .controls {
+    position: absolute;
+    padding: 7px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  .progress {
+    height: 3px;
+    background: lightgray;
+    position: relative;
+    &-line {
+      position: absolute;
+      height: 100%;
+      width: 8%;
+      background: blue;
+    }
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    i {
+      background: white;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .stop {
+      font-size: 60px;
+      margin: 0 10px;
+    }
+    .prev,
+    .next {
+      font-size: 40px;
+    }
+  }
+}
+.track-description {
+  color: #fff;
+  & .author {
+    font-weight: bold;
+  }
+  img {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.playlist {
+  flex: 1;
+  padding: 0 25px;
+}
+.track-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li:not(:last-child) {
+    margin-bottom: 7px;
+  }
+}
+.track-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  i {
+    cursor: pointer;
+  }
+  i::selection {
+    background: transparent;
+  }
+  .isFavorite {
+    margin-left: auto;
+    color: red;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  &-title {
+    font-weight: bold;
+  }
+}
