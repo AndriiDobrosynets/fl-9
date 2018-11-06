@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open",
-    "lint": "./node_modules/.bin/eslint  --ext  .js,.jsx -c ./.eslintrc.json ./src"
+    "lint": "./node_modules/.bin/eslint --ext  .js,.jsx -c ./.eslintrc.json ./src"
   },
   "author": "",
   "license": "ISC",

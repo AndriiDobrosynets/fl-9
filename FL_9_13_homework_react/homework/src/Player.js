@@ -13,7 +13,7 @@ class Player extends Component {
   getTrack(value) {
     const {
       author, mp3, poster, title,
-    } = value;
+    } = value.props;
     this.setState({
       author,
       mp3,

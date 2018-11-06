@@ -42,7 +42,13 @@ class Playlist extends Component {
         <ul className="track-items">
           { tracks.map(track => (
             <li key={track.id}>
-              <Track updateData={this.updateData} author={track.author} title={track.title} />
+              <Track
+                updateData={this.updateData}
+                author={track.author}
+                poster={track.poster}
+                title={track.title}
+                mp3={track.mp3}
+              />
             </li>
           )) }
         </ul>
