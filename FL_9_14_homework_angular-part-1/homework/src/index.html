@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="usersPosts">
+
+<head>
+  <meta charset="utf-8">
+  <title>practice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  <script src="./app/app.constants.js"></script>
+  <script src="./app/app.module.js"></script>
+  <script src="./app/app.controller.js"></script>
+
+</head>
+
+<body ng-controller="UsersCtrl">
+  <div class="container">
+    <h1 class="main-title">{{appTitle}}</h1>
+    <input class="filter" type="text" placeholder="search by title..." ng-model="query">
+    <ul class="posts">
+      <li class="post-item" ng-repeat="post in posts | filter:{title:query}">
+        <div class="d-flex align-items-center">
+          <img ng-src={{post.img}} class= "post-photo" alt="post photo">
+          <span class="post-author">{{post.author}}</span>
+        </div>
+        <h3 class="post-title">{{post.title}}</h3>
+        <p class="post-message">
+          {{post.message}}
+        </p>
+        <div class="post-likes">
+          <i>&hearts;</i>{{post.likes}}
+          <button ng-if class="btn">Edit</button>
+        </div>
+      </li>
+    </ul>
+    <button ng-if="!modalIsOpen" ng-click='handleModal()' class="btn">Add new post</button>
+    <form class="modal" ng-if="modalIsOpen">
+      <div class="d-flex align-items-center">
+        <img ng-src={{userImg}} class= "post-photo" alt="post photo">
+        <span class="post-author">{{userName }}</span>
+      </div>
+      <input type="text" ng-model="newPostTitle" class="form-control">
+      <input type="text" ng-model="postMessage" class="form-control">
+      <div class="form-btns">
+        <button class="btn" ng-click="savePost(newPostTitle,postMessage)">Save</button>
+        <button class="btn" ng-click='handleModal()'>Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+

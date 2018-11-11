@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* utils */
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+
+body {
+  font-family: sans-serif;
+  background: #eee;
+}
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.main-title {
+  text-transform: uppercase;
+  padding: 15px;
+  text-align: center;
+}
+.filter {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+  margin-bottom: 25px;
+  background: #fff;
+}
+.posts {
+  list-style: none;
+}
+
+.post-item {
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.post-photo {
+  width: 90px;
+  border-radius: 50%;
+}
+.post-author {
+  font-weight: bold;
+  margin-left: 20px;
+}
+.post-title {
+  padding: 20px 0;
+}
+.post-message {
+  margin-bottom: 20px;
+}
+.post-likes i {
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  background: #ccc;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.btn {
+  background: none;
+  color: #4286f4;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.modal {
+  background: #fff;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, .25);
+}
+.form-control {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+  margin: 10px 0;
+}
