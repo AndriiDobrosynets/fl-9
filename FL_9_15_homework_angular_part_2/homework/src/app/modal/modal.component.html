@@ -1,0 +1,22 @@
+<div class="modal" *ngIf="isOpen">
+  <div class="inputs">
+    <div class="form-control">
+      <input type="text" [(ngModel)]="newLesson.topic"  placeholder="Topic">
+    </div>
+    <div class="form-control">
+      <input type="date" [(ngModel)]="newLesson.date"  placeholder="Date">
+    </div>
+    <div class="form-control">
+      <input type="text" [(ngModel)]="newLesson.lecturer"  placeholder="Lecturer">
+    </div>
+  </div>
+  <div class="btns">
+    <div>
+      <button class="btn btn-full" (click)="addLesson()" >Add to the list</button>
+    </div>
+    <div>
+      <button class="btn btn-full" (click)="closeModal()">Close modal</button>
+    </div>
+  </div>
+</div>
+

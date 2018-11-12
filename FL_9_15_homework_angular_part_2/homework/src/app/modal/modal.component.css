@@ -1,0 +1,38 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /*background: rgba(0,0,0,0.75);*/
+  background: linear-gradient(135deg, rgba(42,170,128,.6) 0%,rgba(1,171,115,0) 100%);
+  left: 0;
+  top: 0;
+}
+.inputs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.form-control:not(:last-child) {
+  margin-bottom: 15px;
+}
+.form-control input {
+  border: 1px solid #01ab73;
+  background: #ebffe8;
+  padding: 15px;
+  width: 400px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+}
+.btns div {
+  width: 48%;
+}
