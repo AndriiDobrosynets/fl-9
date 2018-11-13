@@ -1,0 +1,21 @@
+<button class="btn btn-full" (click)="showModal()">Add new lesson</button>
+<app-modal [isOpen]="isShown" ></app-modal>
+<p class="title" *ngIf="lessons.length === 0">You have not added anything yet</p>
+<table class="lections-table" *ngIf="lessons.length > 0">
+  <thead>
+    <tr>
+      <th>#ID</th>
+      <th>Topic</th>
+      <th>Date</th>
+      <th>Lecturer</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lesson of lessons">
+      <app-lesson [lesson]="lesson"></app-lesson>
+    </tr>
+  </tbody>
+</table>
+
+

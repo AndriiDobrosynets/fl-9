@@ -1,0 +1,37 @@
+<td>{{lesson.id}}</td>
+<td>
+  <input [(ngModel)]="lesson.topic" [disabled]="!isEditMode" type="text" value={{lesson.topic}}>
+</td>
+<td>
+  <input [(ngModel)]="lesson.date" [disabled]="!isEditMode" type="text" value={{lesson.date}}>
+</td>
+<td>
+  <input [(ngModel)]="lesson.lecturer" [disabled]="!isEditMode" type="text" value={{lesson.lecturer}}>
+</td>
+<td class="action-btn">
+  <div *ngIf="!isEditMode">
+    <button
+      class="btn btn-small btn-inline"
+      (click)="toggleEditMode()">
+      Edit
+    </button>
+    <button
+      class="btn btn-small btn-inline"
+      (click)="deleteLesson(lesson)">
+      Delete
+    </button>
+  </div>
+  <div *ngIf="isEditMode">
+    <button
+      class="btn btn-small btn-inline"
+      (click)="save(lesson)">
+      Save
+    </button>
+    <button
+      class="btn btn-small btn-inline"
+      (click)="cancelEditing()">
+      Cancel
+    </button>
+  </div>
+</td>
+

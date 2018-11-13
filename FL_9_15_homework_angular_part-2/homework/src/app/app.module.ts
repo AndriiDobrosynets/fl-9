@@ -2,17 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LessonComponent } from './lesson/lesson.component';
-import { LessonsDataService } from './lessons-data.service';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { LessonsComponent } from './lessons/lessons.component';
+import {LessonsDataService} from './lessons-data.service';
+import { LessonComponent } from './lesson/lesson.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LessonComponent,
-    ModalComponent
+    LessonsComponent,
+    ModalComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,

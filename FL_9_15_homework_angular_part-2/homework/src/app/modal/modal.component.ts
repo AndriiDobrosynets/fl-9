@@ -18,5 +18,4 @@ export class ModalComponent  {
     this.lessonsDataService.addLesson(this.newLesson);
     this.newLesson = new Lesson();
   }
-  constructor() { }
 }

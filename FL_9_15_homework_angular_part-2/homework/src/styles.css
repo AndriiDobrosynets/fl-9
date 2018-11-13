@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  padding: 50px;
+  background-color: #bebfc0;
+}
+.btn {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 15px 20px;
+  display: block;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #01ab73;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .3s;
+}
+.btn:hover {
+  border: 1px solid;
+  color: #01ab73;
+  background: transparent;
+}
+.btn-full {
+ width: 100%;
+}
+.btn-inline {
+  display: inline-block;
+}
+.btn-small {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 3px;
+}
+::selection {
+  background: #00bf80;
+  color: #fff;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 60px;
+}
+table thead tr {
+  color: #ffffff;
+  font-weight: bold;
+  background: #00bf80;
+}
+table thead tr th,
+table tbody tr td {
+  padding: 15px;
+}
+table thead tr th {
+  border: 1px solid #01ab73;
+}
+table tbody tr td {
+  border: 1px solid #01ab73;
+}
+table tbody tr:nth-child(2n) {
+  background: #f4f4f4;
+}
+table tbody tr:hover {
+  background: #ebffe8;
+}
+.title {
+  font-size: 50px;
+  text-align: center;
+  padding: 30px;
+  font-weight: bold;
+  color: #01ab73;
+}
+input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #01ab73;
+  font-weight: bold;
+}
+input[disabled] {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+app-lesson {
+  display: contents;
+}

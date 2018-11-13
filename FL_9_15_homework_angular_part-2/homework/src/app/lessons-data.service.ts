@@ -3,14 +3,7 @@ import {Lesson } from './lesson';
 
 export class LessonsDataService {
   lastId: number = 0;
-  lessons: Lesson[] = [
-    {
-      id: 1,
-      topic: 'OOP',
-      date: '11/12/2018',
-      lecturer: 'Some teacher'
-    }
-  ];
+  lessons: Lesson[] = [];
 
   addLesson(lesson: Lesson): LessonsDataService {
     lesson.id = ++this.lastId;
